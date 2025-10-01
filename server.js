@@ -47,36 +47,39 @@ if (!fs.existsSync('data')) {
 
 // Функция для сохранения данных в файл
 function saveDataToFile() {
-    const data = {
-        currentPrices,
-        priceHistory,
-        lastUpdateTime,
-        nextUpdateTime
-    };
-    try {
-        fs.writeFileSync('data/prices-data.json', JSON.stringify(data, null, 2));
-        console.log('💾 Данные сохранены в файл');
-    } catch (error) {
-        console.error('❌ Ошибка сохранения данных:', error.message);
-    }
+    // const data = {
+    //     currentPrices,
+    //     priceHistory,
+    //     lastUpdateTime,
+    //     nextUpdateTime
+    // };
+    // try {
+    //     fs.writeFileSync('data/prices-data.json', JSON.stringify(data, null, 2));
+    //     console.log('💾 Данные сохранены в файл');
+    // } catch (error) {
+    //     console.error('❌ Ошибка сохранения данных:', error.message);
+    // }
+    console.log('💾 Сохранение отключено на Vercel');
 }
 
 // Функция для загрузки данных из файла
 function loadDataFromFile() {
-    try {
-        if (fs.existsSync('data/prices-data.json')) {
-            const data = JSON.parse(fs.readFileSync('data/prices-data.json', 'utf8'));
-            currentPrices = data.currentPrices || [];
-            priceHistory = data.priceHistory || [];
-            lastUpdateTime = data.lastUpdateTime;
-            nextUpdateTime = data.nextUpdateTime;
-            console.log('📂 Данные загружены из файла');
-            console.log(`📊 Загружено ${currentPrices.length} текущих цен`);
-            console.log(`📈 Загружено ${priceHistory.length} записей истории`);
-        }
-    } catch (error) {
-        console.error('❌ Ошибка загрузки данных:', error.message);
-    }
+    // try {
+    //     if (fs.existsSync('data/prices-data.json')) {
+    //         const data = JSON.parse(fs.readFileSync('data/prices-data.json', 'utf8'));
+    //         currentPrices = data.currentPrices || [];
+    //         priceHistory = data.priceHistory || [];
+    //         lastUpdateTime = data.lastUpdateTime;
+    //         nextUpdateTime = data.nextUpdateTime;
+    //         console.log('📂 Данные загружены из файла');
+    //         console.log(`📊 Загружено ${currentPrices.length} текущих цен`);
+    //         console.log(`📈 Загружено ${priceHistory.length} записей истории`);
+    //     }
+    // } catch (error) {
+    //     console.error('❌ Ошибка загрузки данных:', error.message);
+    // }
+    console.log('📂 Загрузка отключена на Vercel');
+    return null;
 }
 
 // Функция для получения последней цены магазина
